@@ -345,9 +345,9 @@ let masyvasabcd2 = [];
 let masyvasabcd3 = [];
 let letters = ["A", "B", "C", "D"];
 for (let i = 0; i < 200; i++) {
-  masyvasabcd1[i] = letters[Math.round(Math.random() * 3)];
-  masyvasabcd2[i] = letters[Math.round(Math.random() * 3)];
-  masyvasabcd3[i] = letters[Math.round(Math.random() * 3)];
+  masyvasabcd1[i] = Math.round(Math.random() * 3);
+  masyvasabcd2[i] = Math.round(Math.random() * 3);
+  masyvasabcd3[i] = Math.round(Math.random() * 3);
 }
 
 console.log(masyvasabcd1);
@@ -360,22 +360,15 @@ for (let i = 0; i < 200; i++) {
 }
 console.log(kombinacijos);
 
-let count = {};
-for (element of kombinacijos) {
-  if (count[element]) {
-    count[element] += 1;
+let counts = {};
+for (let i = 0; i < kombinacijos.length; i++) {
+  if (counter[i]) {
+    counter[i] += 1;
   } else {
-    count[element] = 1;
+    counter[i] = 1;
   }
 }
-console.log(count);
-
-Object.values(count);
-console.log(
-  Object.fromEntries(
-    Object.entries(count).filter(([key, value]) => value === 1)
-  )
-);
+console.log(counts);
 console.log(`-------6 uzduotis--------`);
 
 let masyvas1 = [];
